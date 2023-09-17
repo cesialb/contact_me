@@ -1,0 +1,17 @@
+<header>
+  <p><h3>Name:</h3> <%= @contact[:name] %></li></p>
+  <br>
+  <p><h3>Phone Number:</h3> <%= @contact[:phone_number]%></li></p>
+  <br>
+  <p><h3>Email Address:</h3> <%= @contact[:email_address]%></li></p>
+  <br>
+  <ul>
+    <li>
+      <button><a class="edit" href="/contacts/<%= @contact[:id] %>/edit">Edit Contact</a>
+    </li>
+  </ul>
+</header>
+
+<% content_for :header_links do %>
+  <a class="list" href="/contacts">All Contacts</a>
+<% end %>

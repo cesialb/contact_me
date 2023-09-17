@@ -1,0 +1,41 @@
+<section id="contacts">
+  <header>
+    <h2>Editing '<%= @contact[:name] %>'</h2>
+    <ul>
+      <li>
+        <form class="delete" action="/contacts/<%= params[:id]%>/destroy" method="post">
+          <button type="submit" class="delete">Delete Contact</button>
+        </form>
+      </li>
+    </ul>
+  </header>
+</section>
+
+<form action="/contacts/<%= params[:id] %>" method="post">
+  <dl>
+    <dt>
+      <label for="name">Enter the new name for <%= @contact[:name] %>:</label>
+    </dt>
+    <dd>
+    <input name="name" placeholder="Contact Name" type="text" value="<%= params[:name] || @contact[:name] %>">
+    </dd>
+
+    <dt>
+      <label for="phone_number">Enter the new phone number for <%= @contact[:name] %>:</label>
+    </dt>
+    <dd>
+    <input name="phone_number" placeholder="Phone Number" type="text" value="<%= params[:phone_number] || @contact[:phone_number] %>">
+    </dd>
+
+    <dt>
+      <label for="email_address">Enter the new email address for <%= @contact[:name] %>:</label>
+    </dt>
+    <dd>
+    <input name="email_address" placeholder="Email Address" type="text" value="<%= params[:email_address] || @contact[:email_address] %>">
+    </dd>
+  </dl>
+  <fieldset class="actions">
+    <input type="submit" value="Save">
+    <a href="/contacts/<%= params[:id] %>">Cancel</a>
+  </fieldset>
+</form>

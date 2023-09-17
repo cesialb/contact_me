@@ -1,0 +1,25 @@
+<form action='/contacts' method='post'>
+  <label for="name">Enter the name of your new contact:</label>
+  <input name="name" placeholder="Contact Name" type="text" value="">
+  
+  <br><br>
+
+  <label for="phone_number">Enter their phone number:</label>
+  <input name="phone_number" placeholder="Phone Number" type="text" value="">
+  
+  <br><br>
+
+  <label for="email_address">Enter their email address:</label>
+  <input name="email_address" placeholder="Email Address" type="text" value="">
+ 
+  <br><br>
+
+  <fieldset class="actions">
+    <input type="submit" value="Save Contact">
+    <a href="/contacts">Cancel</a>
+  </fieldset>
+</form>
+
+<% content_for :header_links do %>
+  <a class="list" href="/contacts">All Contacts</a>
+<% end %>

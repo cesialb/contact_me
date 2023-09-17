@@ -1,0 +1,13 @@
+<html>
+    <% @contacts.each do |contact| %>
+      <li>
+        <a href="/contacts/<%= contact[:id] %>">
+          <%= contact[:name] %>
+        </a>
+      </li>
+  <% end %>
+</html>
+
+<% content_for :header_links do %>
+  <a class="add" href="contacts/new">New Contact</a>
+<% end %>
